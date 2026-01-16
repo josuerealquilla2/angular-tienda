@@ -1,0 +1,13 @@
+ #container-header {
+   border-color: #d6d6d6;
+
+
+   > .container {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     grid-gap: 20px;
+     align-items: center;
+     justify-content: space-between;
+   }
+ }
+

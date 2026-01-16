@@ -1,0 +1,51 @@
+<div class="border-bottom py-2 px-3 position-relative" id="container-header">
+    <div class="container">
+
+        <div class="d-flex flex-row gap-3 flex-nowrap align-items-center">
+            <i class="bi bi-headphones fs-5"></i>
+            <p class="small text-muted m-0">
+                Llámanos de forma gratuita:
+            </p>
+            <a rel="nofollow noopener" class="text-primary small d-block fw-bold">+34 666 12 34 56</a>
+        </div>
+
+        <div class="">
+            <p class="m-0 text-muted small">
+                Envíos gratis en pedidos <span class="fw-bold">€50+</span>
+            </p>
+        </div>
+
+        <div class="d-flex gap-3 align-items-center justify-content-around">
+            <button type="button" (click)="toggleMoneda()"
+                    class="btn btn-sm d-flex flex-row flex-nowrap align-items-center gap-2">
+                <i class="bi bi-currency-dollar fs-5"></i>
+                EUR
+                <i class="bi bi-chevron-down"></i>
+            </button>
+
+            <button type="button" class="btn btn-sm d-flex flex-row flex-nowrap align-items-center gap-2">
+                <i class="bi bi-translate fs-5"></i>
+                Español
+                <i class="bi bi-chevron-down"></i>
+            </button>
+
+            <button type="button"
+                    (click)="toggleLogin()"
+                    class="btn btn-sm d-flex flex-row flex-nowrap align-items-center gap-2">
+                <i class="bi bi-person fs-5"></i>
+                Iniciar sesión
+                <i class="bi bi-chevron-down"></i>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+@if (openLogin()) {
+    <app-login (fnToggleLoginHeader)="toggleLogin()"></app-login>
+}
+
+
+@if (openMoneda()) {
+    <app-moneda (openMonedaDesdeHeader)="toggleMoneda()"></app-moneda>
+}
